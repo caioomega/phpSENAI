@@ -9,4 +9,6 @@
     echo "<strong> Subtração: </strong> " . $a . " - " . $b . " = " . $a - $b . "<br>";
     echo "<strong> Multipçicação: </strong> " . $a . " x " . $b . " = " . $a * $b . "<br>";
     echo "<strong> Divisão: </strong> " . $a . " / " . $b . " = " . $b / $a . "<br>";
+    echo "bora bill";
+    
 ?>
