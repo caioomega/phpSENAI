@@ -1,0 +1,38 @@
+[
+    {
+        "tipo": "aluno",
+        "nome": "caio",
+        "email": "caioh.mega2018@gmail.com",
+        "matricula": "1234124"
+    },
+    {
+        "tipo": "professor",
+        "nome": "caio",
+        "email": "caio.mega@aluno.senai.br",
+        "disciplina": "matematica"
+    },
+    {
+        "tipo": "professor",
+        "nome": "caio",
+        "email": "caio.mega@aluno.senai.br",
+        "disciplina": "matematica"
+    },
+    {
+        "tipo": "professor",
+        "nome": "caio",
+        "email": "caio.mega@aluno.senai.br",
+        "disciplina": "matematica"
+    },
+    {
+        "tipo": "professor",
+        "nome": "caio",
+        "email": "caio.mega@aluno.senai.br",
+        "disciplina": "matematica"
+    },
+    {
+        "tipo": "professor",
+        "nome": "caio",
+        "email": "caioh.mega2018@gmail.com",
+        "disciplina": "matematica"
+    }
+]

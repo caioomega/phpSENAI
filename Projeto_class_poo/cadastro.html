@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #2b00ad;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-container {
+            background: #fff;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 1s;
+            border: 1.5px solid #e0e0e0;
+            box-shadow: 0 12px 40px rgba(44,62,80,0.10);
+        }
+        h2 {
+            text-align: center;
+            color: #2b00ad;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+            background: #f7f8fa;
+        }
+        input:focus, select:focus {
+            border-color: #2b00ad;
+            outline: none;
+            box-shadow: 0 0 8px #2b00ad44;
+            background: #f3f3ff;
+            transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        input::placeholder, select {
+            color: #888;
+            font-size: 0.98rem;
+        }
+        button {
+            width: 100%;
+            padding: 0.8rem;
+            background: #2b00ad;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, padding 0.5s, box-shadow 0.3s;
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        button:hover {
+            background: #1a007a;
+            padding: 1.2rem;
+            box-shadow: 0 4px 16px #2b00ad44;
+            transition: background 0.3s, padding 0.5s, box-shadow 0.3s;
+            
+        }
+        button:active {
+            background: #2b00ad;
+            box-shadow: 0 2px 8px #2b00ad33;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="Logo Escola" style="width:80px;display:block;margin:0 auto 1rem auto;">
+        <h2>Cadastro</h2>
+        <p>Preencha os dados para acessar o portal da Escola Futuro</p>
+        <form action="salvar.php" method="post">
+            <label for="tipo"><span style="margin-right:6px;">👤</span>Tipo:</label>
+            <select name="tipo" id="tipo" required>
+                <option value="">Selecione</option>
+                <option value="professor">Professor</option>
+                <option value="aluno">Aluno</option>
+            </select>
+
+            <label for="nome"><span style="margin-right:6px;">📝</span>Nome:</label>
+            <input type="text" name="nome" id="nome" required placeholder="Digite seu nome">
+
+            <label for="email"><span style="margin-right:6px;">✉️</span>Email:</label>
+            <input type="email" name="email" id="email" required placeholder="exemplo@email.com">
+
+            <label for="disciplina" id="label-disciplina" style="display:none;"><span style="margin-right:6px;">📚</span>Disciplina (para professor):</label>
+            <input type="text" name="disciplina" id="disciplina" style="display:none;" placeholder="Ex: Matemática">
+
+            <label for="matricula" id="label-matricula" style="display:none;"><span style="margin-right:6px;">#️⃣</span>Matrícula (para aluno):</label>
+            <input type="text" name="matricula" id="matricula" style="display:none;" placeholder="Ex: 2023001">
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+    <script>
+        const tipoSelect = document.getElementById('tipo');
+        const disciplinaInput = document.getElementById('disciplina');
+        const labelDisciplina = document.getElementById('label-disciplina');
+        const matriculaInput = document.getElementById('matricula');
+        const labelMatricula = document.getElementById('label-matricula');
+
+        tipoSelect.addEventListener('change', function() {
+            if (this.value === 'professor') {
+                disciplinaInput.style.display = 'block';
+                labelDisciplina.style.display = 'block';
+                matriculaInput.style.display = 'none';
+                labelMatricula.style.display = 'none';
+            } else if (this.value === 'aluno') {
+                disciplinaInput.style.display = 'none';
+                labelDisciplina.style.display = 'none';
+                matriculaInput.style.display = 'block';
+                labelMatricula.style.display = 'block';
+            } else {
+                disciplinaInput.style.display = 'none';
+                labelDisciplina.style.display = 'none';
+                matriculaInput.style.display = 'none';
+                labelMatricula.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
